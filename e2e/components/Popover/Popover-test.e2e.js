@@ -64,7 +64,7 @@ test.describe('Popover', () => {
           component: 'popover',
           story: 'experimental-auto-align-right',
           theme,
-        });
+        }); 
       });
 
       test('popover - expermental autoAlign scroll to top @vrt', async ({
