@@ -153,8 +153,8 @@ export const Default = {
   render: () => html`
     <cds-dropdown
       helper-text="This is some helper text"
-      title-text="Dropdown label"
-      label="Dropdown menu options">
+      title-text="This is an example title"
+      label="This is an example label">
       ${items.map(
         (elem) => html`
           <cds-dropdown-item ?disabled=${elem.disabled} value="${elem.value}"

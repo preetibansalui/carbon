@@ -237,6 +237,20 @@ class CDSDropdown extends ValidityMixin(
     }
   }
 
+  // Handle show highlight on mouseover event
+  @HostListener('mouseover')
+  protected _handleHover(e) {
+    const { id } = e.target;
+    const { selectorItem } = this.constructor as typeof CDSDropdown;
+    const items = this.querySelectorAll(selectorItem);
+    this._clearHighlight();
+    forEach(items, (item) => {
+      return !item?.hasAttribute('disabled')
+        ? ((item as CDSDropdownItem).highlighted = item.id == id)
+        : '';
+    });
+  }
+
   /**
    * Handles `slotchange` event for the `<slot>` for helper text.
    */
